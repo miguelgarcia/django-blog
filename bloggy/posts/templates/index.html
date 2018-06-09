@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} {% block content %}
+<h3 class="center-align">Last Posts</h3>
+<ul class="collection">
+    {% for post in posts %}
+    <li class="collection-item">
+        <a href="/posts/detail/{{post.id}}">
+            <h3>
+                {{ post.title | title }}
+            </h3>
+        </a>
+        <p>
+            {{ post.body | truncatewords:20 }}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
